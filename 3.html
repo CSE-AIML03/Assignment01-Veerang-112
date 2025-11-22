@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Veerang — Cyberpunk Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&family=Press+Start+2P&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --bg:#05060a;
+    --glass: rgba(255,255,255,0.06);
+    --pink:#ff2dd4;
+    --cyan:#00f0ff;
+    --muted:#9aa3b2;
+  }
+
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{
+    background:var(--bg);
+    font-family:Inter;
+    color:white;
+  }
+
+  /* container */
+  .wrap{max-width:1000px;margin:auto;padding:20px;}
+
+  /* header */
+  header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:30px;
+  }
+
+  .logo{
+    display:flex;
+    gap:12px;
+    align-items:center;
+  }
+
+  .badge{
+    width:50px;height:50px;
+    border-radius:10px;
+    background:linear-gradient(120deg,var(--pink),var(--cyan));
+    display:flex;justify-content:center;align-items:center;
+  }
+
+  .badge span{
+    font-family:"Press Start 2P";
+    font-size:10px;
+    color:black;
+  }
+
+  nav a{
+    color:var(--muted);
+    text-decoration:none;
+    margin-left:15px;
+    font-weight:700;
+  }
+  nav a:hover{color:var(--cyan);}
+
+  /* hero section */
+  .hero{
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+  }
+
+  .card{
+    background:var(--glass);
+    padding:20px;
+    border-radius:12px;
+    backdrop-filter:blur(4px);
+  }
+
+  .title{
+    font-size:34px;
+    font-weight:900;
+    line-height:1.1;
+  }
+
+  /* simple glitch */
+  .glitch{
+    color:var(--cyan);
+    position:relative;
+  }
+  .glitch::after{
+    content:attr(data-text);
+    position:absolute;
+    left:2px;top:2px;
+    color:var(--pink);
+    opacity:0.5;
+  }
+
+  /* buttons */
+  .btn{
+    margin-top:10px;
+    padding:10px 16px;
+    border:1px solid var(--cyan);
+    background:transparent;
+    color:var(--cyan);
+    border-radius:8px;
+    cursor:pointer;
+    font-weight:700;
+  }
+
+  .btn.secondary{
+    border-color:var(--muted);
+    color:var(--muted);
+  }
+
+  /* avatar box */
+  .avatar{
+    width:100%;height:200px;
+    background:linear-gradient(135deg,#041017,#091a25);
+    border-radius:12px;
+    border:1px solid rgba(255,255,255,0.06);
+  }
+
+  /* section */
+  .section{margin-top:40px;}
+  .section h2{margin-bottom:15px;}
+
+  /* project grid */
+  .grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:18px;
+  }
+
+  .project{
+    padding:16px;
+    border-radius:12px;
+    background:rgba(255,255,255,0.03);
+    transition:0.3s;
+    border:1px solid rgba(255,255,255,0.05);
+  }
+  .project:hover{
+    transform:translateY(-6px);
+  }
+  .project .tag{font-size:12px;color:var(--muted);}
+
+  /* skills basic neon bars */
+  .skill-box{
+    margin-bottom:12px;
+  }
+  .bar{
+    height:8px;
+    background:rgba(255,255,255,0.08);
+    border-radius:4px;
+    overflow:hidden;
+  }
+  .fill{
+    height:8px;
+    background:linear-gradient(90deg,var(--cyan),var(--pink));
+  }
+
+  /* contact form */
+  input,textarea{
+    width:100%;
+    padding:10px;
+    margin-bottom:10px;
+    background:transparent;
+    border:1px solid rgba(255,255,255,0.1);
+    border-radius:8px;
+    color:white;
+  }
+
+  .send{
+    padding:10px 16px;
+    border:none;
+    border-radius:8px;
+    background:linear-gradient(90deg,var(--pink),var(--cyan));
+    font-weight:900;
+    cursor:pointer;
+    color:black;
+  }
+
+  footer{
+    margin-top:40px;
+    text-align:center;
+    color:var(--muted);
+    padding:20px;
+  }
+
+</style>
+</head>
+
+<body>
+
+<div class="wrap">
+
+  <!-- HEADER -->
+  <header>
+    <div class="logo">
+      <div class="badge"><span>V R</span></div>
+      <div>
+        <h2>Veerang Dagar</h2>
+        <p style="color:var(--muted)">Frontend • VFX • Cyberpunk Creative</p>
+      </div>
+    </div>
+
+    <nav>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="card" style="flex:1">
+      <p style="color:var(--pink);font-weight:700">CYBERPUNK PORTFOLIO</p>
+      <h2 class="title">
+        I am <span class="glitch" data-text="VEERANG">VEERANG</span>
+        <div style="font-size:16px;color:var(--muted);font-weight:700">— I design UI & VFX</div>
+      </h2>
+      <p style="color:var(--muted)">I craft neon UIs and cinematic VFX with smooth motion.</p>
+
+      <button class="btn">View Projects</button>
+      <button class="btn secondary">Hire Me</button>
+    </div>
+
+    <div class="card" style="width:260px">
+      <div class="avatar"></div>
+      <p style="margin-top:10px;font-weight:700">Frontend Developer & VFX Artist</p>
+      <p style="color:var(--muted);font-size:14px">Experience in HTML, CSS, JS, Blender</p>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="section">
+    <h2>Selected Projects</h2>
+    <div class="grid">
+      <div class="project">
+        <div class="tag">Web — Interactive</div>
+        <h3>Cyber City Landing</h3>
+        <p style="color:var(--muted)">Neon landing page with parallax.</p>
+      </div>
+
+      <div class="project">
+        <div class="tag">VFX — Short</div>
+        <h3>Drone Chase</h3>
+        <p style="color:var(--muted)">Sci-fi VFX shot in Blender.</p>
+      </div>
+
+      <div class="project">
+        <div class="tag">UI — App</div>
+        <h3>Neon Dashboard</h3>
+        <p style="color:var(--muted)">Glass UI dashboard.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills" class="section">
+    <h2>Skills</h2>
+
+    <div class="skill-box">
+      HTML/CSS
+      <div class="bar"><div class="fill" style="width:90%"></div></div>
+    </div>
+
+    <div class="skill-box">
+      JavaScript
+      <div class="bar"><div class="fill" style="width:70%"></div></div>
+    </div>
+
+    <div class="skill-box">
+      Blender & VFX
+      <div class="bar"><div class="fill" style="width:80%"></div></div>
+    </div>
+
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section">
+    <h2>Contact</h2>
+
+    <input type="text" placeholder="Your Name">
+    <input type="email" placeholder="Email">
+    <textarea rows="4" placeholder="Message"></textarea>
+
+    <button class="send">Send</button>
+  </section>
+
+  <footer>
+    © 2025 Veerang — All Rights Reserved
+  </footer>
+
+</div>
+
+</body>
+</html>

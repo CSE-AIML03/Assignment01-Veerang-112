@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Veerang — Cyberpunk Portfolio</title>
+  <meta name="description" content="Dark cyberpunk portfolio — projects, skills and contact" />
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Press+Start+2P&display=swap" rel="stylesheet">
+
+  <link href="style.css" rel="stylesheet">
+</head>
+<body>
+
+<canvas id="bgCanvas"></canvas>
+
+<div class="wrap">
+  <header>
+    <div class="logo">
+      <div class="badge"><span>V R</span></div>
+      <div>
+        <h1>Veerang Dagar</h1>
+        <p>Frontend • VFX • Cyberpunk Creative</p>
+      </div>
+    </div>
+
+    <nav>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-left card">
+        <div class="eyebrow">CYBERPUNK PORTFOLIO</div>
+        <h2 class="title">I am <span class="glitch" data-text="VEERANG">VEERANG</span><br><small style="font-size:18px;color:var(--muted);font-weight:600">— I design UI, VFX & immersive experiences</small></h2>
+        <p class="subtitle">I craft interfaces with neon-lit aesthetics and motion. I build small fast websites and cinematic VFX sequences — focused on polish and performance.</p>
+
+        <div class="cta-row">
+          <button class="btn" onclick="document.getElementById('projects').scrollIntoView({behavior:'smooth'})">View Projects</button>
+        </div>
+
+        <div style="margin-top:18px;display:flex;gap:8px;align-items:center">
+          <div style="font-size:12px;color:var(--muted);width:90px">Location</div>
+          <div style="font-weight:800">India • Remote</div>
+        </div>
+
+        <div style="margin-top:16px;display:flex;gap:12px;align-items:center">
+          <div style="font-size:12px;color:var(--muted)">Availability</div>
+          <div style="font-weight:700;color:var(--neon-cyan)">Open to work</div>
+        </div>
+
+      </div>
+
+      <aside class="card">
+        <div class="avatar">
+          <!-- placeholder neon avatar -->
+          <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <image href="photo_2025-11-23_01-55-11.jpg"
+         x="0" y="0"
+         width="100" height="100" />
+            
+          </svg>
+        </div>
+        <div class="meta">
+          <p style="font-weight:800">Frontend Developer & VFX Artist</p>
+          <p>Experience with HTML, CSS, JS, Three.js, Blender, After Effects</p>
+          <p style="margin-top:8px;color:var(--muted)">Email: <span style="color:var(--neon-pink);font-weight:800">veerang@example.com</span></p>
+        </div>
+      </aside>
+    </section>
+
+    <section id="projects" class="section">
+      <h2>Selected Projects</h2>
+      <div class="grid">
+        <article class="project">
+          <div class="tag">Mini chemistry Software</div>
+          <h3>Electroelement</h3>
+          <p>A mini software which shows the electrons and shell configuration of atoms on the basis of formula "2n^2".</p>
+          <div class="actions"><span class="pill">Python</span><span class="pill">PyQt5</span></div>
+        </article>
+
+        <article class="project">
+          <div class="tag">VFX — Short</div>
+          <h3>Drone Chase VFX</h3>
+          <p>Sci-fi chase with glow compositing and particle bursts created in Blender & AE.</p>
+          <div class="actions"><span class="pill">Blender</span><span class="pill">After Effects</span></div>
+        </article>
+
+        <article class="project">
+          <div class="tag">UI — App</div>
+          <h3>Neon Dashboard</h3>
+          <p>Dark-mode dashboard concept using glassmorphism, animated charts and micro-interactions.</p>
+          <div class="actions"><span class="pill">HTML</span><span class="CSS">D3</span></div>
+        </article>
+
+        <article class="project">
+          <div class="tag">Home automation</div>
+          <h3>Jarvis</h3>
+          <p>An AI based home automation system which can be controlled by voice too and it has sarcasim talk feature too.</p>
+          <div class="actions"><span class="pill">arduino</span><span class="pill">C++</span><span class="pill">Sensors & Modules</span></div>
+        </article>
+
+        <article class="project">
+          <div class="tag">Robot</div>
+          <h3>Quadpod</h3>
+          <p>A robot which has 4 legs which moves can dance, say hello, has eyes can show emotions etc.</p>
+          <div class="actions"><span class="pill">arduino</span><span class="pill">C++</span><span class="pill">Sensors & Modules</span><span class="pill">3d parts</span></div>
+        </article>
+
+        <article class="project">
+          <div class="tag">3d animation</div>
+          <h3>Japanese war</h3>
+          <p>An 3d envirnment in blender in which a war between samurai and knights.</p>
+          <div class="actions"><span class="pill">Blender</span><span class="pill">Filmora</span><span class="pill">After effects</span></div>
+        </article>
+
+        <article class="project">
+          <h3>And many more projects in different fields</h3>
+        </article>
+      </div>
+    </section>
+
+    <section id="skills" class="section">
+      <h2>Skills</h2>
+        <div class="skill">
+  <div class="circle-container">
+    <svg class="ring" viewBox="0 0 36 36">
+      <defs>
+        <linearGradient id="grad">
+          <stop offset="0" stop-color="#00f0ff" />
+          <stop offset="1" stop-color="#ff2dd4" />
+        </linearGradient>
+      </defs>
+
+      <!-- Background circle -->
+      <path class="bg"
+        d="M18 2a16 16 0 1 0 0 32 16 16 0 0 0 0-32" />
+
+      <!-- Animated gradient circle -->
+      <path class="fg"
+        d="M18 2a16 16 0 1 0 0 32 16 16 0 0 0 0-32" />
+    </svg>
+
+    <!-- Center text -->
+    <span class="center-text">html</span>
+  </div>
+        </div>
+
+        <div class="skill card">
+          <div class="circle-container">
+    <svg class="ring" viewBox="0 0 36 36">
+      <defs>
+        <linearGradient id="grad">
+          <stop offset="0" stop-color="#00f0ff" />
+          <stop offset="1" stop-color="#ff2dd4" />
+        </linearGradient>
+      </defs>
+
+      <!-- Background circle -->
+      <path class="bg"
+        d="M18 2a16 16 0 1 0 0 32 16 16 0 0 0 0-32" />
+
+      <!-- Animated gradient circle -->
+      <path class="fg"
+        d="M18 2a16 16 0 1 0 0 32 16 16 0 0 0 0-32" />
+    </svg>
+
+    <!-- Center text -->
+    <span class="center-text">CSS</span>
+  </div>
+        </div>
+
+        <div class="skill card">
+          <div class="circle-container">
+    <svg class="ring" viewBox="0 0 36 36">
+      <defs>
+        <linearGradient id="grad">
+          <stop offset="0" stop-color="#00f0ff" />
+          <stop offset="1" stop-color="#ff2dd4" />
+        </linearGradient>
+      </defs>
+
+      <!-- Background circle -->
+      <path class="bg"
+        d="M18 2a16 16 0 1 0 0 32 16 16 0 0 0 0-32" />
+
+      <!-- Animated gradient circle -->
+      <path class="fg"
+        d="M18 2a16 16 0 1 0 0 32 16 16 0 0 0 0-32" />
+    </svg>
+
+    <!-- Center text -->
+    <span class="center-text">Blender</span>
+  </div>
+        </div>
+
+        <div class="skill card">
+          <svg viewBox="0 0 36 36">
+            <path stroke="rgba(255,255,255,0.04)" stroke-width="2" fill="none" d="M18 2a16 16 0 1 0 0 32 16 16 0 0 0 0-32"/>
+            <path stroke="url(#s4)" stroke-width="2.8" stroke-linecap="round" fill="none" d="M18 2a16 16 0 1 0 0 32 16 16 0 0 0 0-32" transform="rotate(-90 18 18)" stroke-dasharray="80" stroke-dashoffset="64"/>
+            <defs>
+              <linearGradient id="s4"><stop offset="0" stop-color="#00f0ff"/><stop offset="1" stop-color="#ff2dd4"/></linearGradient>
+            </defs>
+          </svg>
+          <p>Blender / VFX</p>
+        </div>
+
+      
+    </section>
+
+    <section id="contact" class="section">
+      <h2>Contact</h2>
+      <div class="contact">
+        <form>
+          <input type="text" placeholder="Your name" required />
+          <input type="email" placeholder="Email" required />
+          <textarea rows="5" placeholder="Message"></textarea>
+          <button class="send">Send Message</button>
+        </form>
+
+        <aside class="card">
+          <h3>Get in touch</h3>
+          <p style="color:var(--muted)">Prefer email? <br><strong style="color:var(--neon-pink)">veerang@example.com</strong></p>
+
+          <div style="margin-top:12px">
+            <div style="font-size:12px;color:var(--muted)">Social</div>
+            <div style="display:flex;gap:8px;margin-top:8px">
+              <a class="pill" href="#">Twitter</a>
+              <a class="pill" href="#">Github</a>
+              <a class="pill" href="#">LinkedIn</a>
+            </div>
+          </div>
+
+        </aside>
+      </div>
+    </section>
+
+    <footer>
+      <small>© <span id="yr"></span> Veerang Dagar — Built with neon love.</small>
+    </footer>
+
+  </main>
+</div>
+<script src="script.js"></script>
+
+</body>
+</html>
