@@ -18,7 +18,7 @@ function matrixDraw() {
   ctx.fillStyle = 'rgba(0,0,0,0.12)';
   ctx.fillRect(0, 0, w, h);
 
-  ctx.fillStyle = 'rgba(0,240,255,0.08)';
+  ctx.fillStyle = 'rgba(0, 238, 255, 0.08)';
   ctx.font = '14px monospace';
 
   for (let i = 0; i < ypos.length; i++) {
@@ -61,8 +61,7 @@ function drawParticles() {
     if (p.y > h) p.y = 0;
 
     const g = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, p.r * 18);
-    g.addColorStop(0, 'rgba(0,240,255,' + (0.08 * (1 - p.age / p.life)) + ')');
-    g.addColorStop(1, 'rgba(0,240,255,0)');
+    g.addColorStop(0, 'rgba(0,240,255,0.02');
 
     ctx.fillStyle = g;
     ctx.beginPath();
