@@ -1,0 +1,76 @@
+<html>
+<head>
+    <title>WD-practical-2</title>
+    <style>
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: snow-white;
+    margin: 0;
+    padding: 25px;
+}
+.title {
+    text-align: center;
+    margin-bottom: 30px;
+}
+.profile-container {
+    width: 700px;
+    background: white;
+    margin: auto;
+    padding: 25px;
+    display: flex;
+    flex-direction: row; 
+    justify-content: flex-start; 
+    align-items: center; 
+    gap: 25px;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.15);
+}
+.profile-img {
+    background: grey;
+    width: 200px;
+    height: 200px;
+    border-radius: 12px;
+    text-align: center;
+}
+.details-section {
+    display: flex;
+    flex-direction: column; 
+    gap: 6px;
+}
+.name {
+    margin: 0 0 10px 0;
+    font-size: 28px;
+    color: #0077ff;
+}
+@media (max-width: 768px){
+    .profile-container {
+        width: 90%;
+        background: white;
+        margin: auto;
+        padding: 25px;
+        display: flex;
+        flex-direction: column; 
+        justify-content: flex-start; 
+        align-items: center; 
+        gap: 25px;
+        border-radius: 12px;
+        box-shadow: 0 0 15px rgba(0,0,0,0.15);
+    }
+}
+    </style>
+</head>
+<body>
+    <h1 class="title">Student Profile Card</h1>
+    <div class="profile-container">
+        <div class="profile-img"><h1 style="
+    padding:60px 0px 0px 0px;">Photo</h1></div>
+        <div class="details-section">
+            <h2 class="name">Veerang Singh Dagar</h2>
+            <p>Course: B.Tech CSE(Ai/ml)</p>
+            <p>Roll No: 2025B15310234</p>
+            <p>College: ABC Senior Secondary School</p>
+        </div>
+
+    </div>\
+</body>
+</html>
