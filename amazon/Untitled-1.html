@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Amazon Style E‑Commerce</title>
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    body{
+      background:#e3e6e6;
+    }
+
+    /* HEADER */
+    header{
+      background:#131921;
+      color:#fff;
+      padding:10px 20px;
+    }
+    .nav{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+    }
+    .logo{
+      font-size:24px;
+      font-weight:bold;
+      color:#f3a847;
+    }
+    .search-box{
+      flex:1;
+      margin:0 20px;
+      display:flex;
+    }
+    .search-box input{
+      width:100%;
+      padding:10px;
+      border:none;
+    }
+    .search-box button{
+      padding:10px 15px;
+      border:none;
+      background:#febd69;
+      cursor:pointer;
+    }
+    .nav-links div{
+      margin-left:20px;
+      font-size:14px;
+      cursor:pointer;
+    }
+
+    /* SUB NAV */
+    .sub-nav{
+      background:#232f3e;
+      color:#fff;
+      padding:8px 20px;
+      font-size:14px;
+    }
+    .sub-nav span{
+      margin-right:15px;
+      cursor:pointer;
+    }
+
+    /* HERO */
+    .hero{
+      background:url('https://via.placeholder.com/1500x400') no-repeat center/cover;
+      height:350px;
+    }
+
+    /* PRODUCTS */
+    .products{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:20px;
+      padding:20px;
+      margin-top:-80px;
+    }
+    .card{
+      background:#fff;
+      padding:15px;
+      border-radius:4px;
+      box-shadow:0 2px 5px rgba(0,0,0,0.1);
+    }
+    .card h3{
+      margin-bottom:10px;
+    }
+    .card img{
+      width:100%;
+      height:200px;
+      object-fit:cover;
+    }
+    .card a{
+      display:block;
+      margin-top:10px;
+      color:#007185;
+      text-decoration:none;
+      font-size:14px;
+    }
+
+    /* FOOTER */
+    footer{
+      background:#131921;
+      color:#fff;
+      padding:30px 20px;
+      margin-top:20px;
+    }
+    .footer-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+      gap:20px;
+    }
+    footer h4{
+      margin-bottom:10px;
+    }
+    footer p{
+      font-size:14px;
+      margin-bottom:6px;
+      cursor:pointer;
+    }
+    .copyright{
+      text-align:center;
+      margin-top:20px;
+      font-size:13px;
+      color:#ccc;
+    }
+
+    @media(max-width:768px){
+      .search-box{display:none;}
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="nav">
+      <div class="logo">ShopZone</div>
+      <div class="search-box">
+        <input type="text" placeholder="Search products" />
+        <button>🔍</button>
+      </div>
+      <div class="nav-links">
+        <div>Sign In</div>
+        <div>Orders</div>
+        <div>Cart 🛒</div>
+      </div>
+    </div>
+  </header>
+
+  <!-- SUB NAV -->
+  <div class="sub-nav">
+    <span>All</span>
+    <span>Mobiles</span>
+    <span>Electronics</span>
+    <span>Fashion</span>
+    <span>Home</span>
+    <span>Deals</span>
+  </div>
+
+  <!-- HERO -->
+  <div class="hero"></div>
+
+  <!-- PRODUCTS -->
+  <section class="products">
+    <div class="card">
+      <h3>Electronics</h3>
+      <img src="https://via.placeholder.com/300" />
+      <a href="#">Shop now</a>
+    </div>
+    <div class="card">
+      <h3>Fashion</h3>
+      <img src="https://via.placeholder.com/300" />
+      <a href="#">Explore deals</a>
+    </div>
+    <div class="card">
+      <h3>Home & Kitchen</h3>
+      <img src="https://via.placeholder.com/300" />
+      <a href="#">See more</a>
+    </div>
+    <div class="card">
+      <h3>Gaming</h3>
+      <img src="https://via.placeholder.com/300" />
+      <a href="#">Buy now</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-grid">
+      <div>
+        <h4>Get to Know Us</h4>
+        <p>About Us</p>
+        <p>Careers</p>
+        <p>Press</p>
+      </div>
+      <div>
+        <h4>Connect with Us</h4>
+        <p>Facebook</p>
+        <p>Twitter</p>
+        <p>Instagram</p>
+      </div>
+      <div>
+        <h4>Make Money with Us</h4>
+        <p>Sell on ShopZone</p>
+        <p>Affiliate Program</p>
+      </div>
+      <div>
+        <h4>Help</h4>
+        <p>Your Account</p>
+        <p>Returns</p>
+        <p>Customer Care</p>
+      </div>
+    </div>
+    <div class="copyright">© 2025 ShopZone Clone</div>
+  </footer>
+
+</body>
+</html>
