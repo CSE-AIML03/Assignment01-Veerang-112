@@ -39,11 +39,11 @@
     .search-box input{
       width:100%;
       padding:10px;
-      border:none;
+      border-radius: 20px 0 0 20px;
     }
     .search-box button{
       padding:10px 15px;
-      border:none;
+      border-radius: 0 20px 20px 0;
       background:#febd69;
       cursor:pointer;
     }
@@ -67,8 +67,7 @@
 
     /* HERO */
     .hero{
-      background:url('https://via.placeholder.com/1500x400') no-repeat center/cover;
-      height:350px;
+      height:500px;
     }
 
     /* PRODUCTS */
@@ -131,6 +130,87 @@
     @media(max-width:768px){
       .search-box{display:none;}
     }
+    .pro{
+        height:500px;
+        width: 100%;
+    }
+    .slider{
+            width: 100%;
+            height: 400px;
+            background: rgb(255, 255, 255);
+            position: relative;
+            overflow: hidden;
+        }
+        .slider-container {
+            display: flex;
+            height: 100%;
+            width: 100%;
+            transition: transform 0.5s ease;
+        }
+        .slide {
+            min-width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            font-weight: bold;
+            color: white;
+        }
+        .slide:nth-child(1) { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+        .slide:nth-child(2) { background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); }
+        .slide:nth-child(3) { background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); }
+        .slide:nth-child(4) { background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%); }
+
+        input[type="radio"] { display: none; }
+
+        /* move container based on checked slide */
+        #slide1:checked ~ .slider-container { transform: translateX(0); }
+        #slide2:checked ~ .slider-container { transform: translateX(-100%); }
+        #slide3:checked ~ .slider-container { transform: translateX(-200%); }
+        #slide4:checked ~ .slider-container { transform: translateX(-300%); }
+
+        /* dots */
+        .controls {
+            position: absolute;
+            bottom: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+            z-index: 10;
+        }
+        .controls label {
+            width: 12px;
+            height: 12px;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 50%;
+            cursor: pointer;
+            transition: background 0.3s;
+            display: inline-block;
+        }
+        /* active dot when its slide is checked */
+        #slide1:checked ~ .controls label[for="slide1"],
+        #slide2:checked ~ .controls label[for="slide2"],
+        #slide3:checked ~ .controls label[for="slide3"],
+        #slide4:checked ~ .controls label[for="slide4"] {
+            background: rgba(255, 255, 255, 1);
+        }
+
+        /* prev/next buttons (per-slide pairs) */
+        .nav-buttons { position: absolute; top: 50%; left: 0; right: 0; transform: translateY(-50%); z-index: 10; pointer-events: none; display:flex; justify-content:space-between; padding: 0 10px; box-sizing: border-box; }
+        .nav-buttons label { pointer-events: auto; display: none; background: rgba(0,0,0,0.5); color: white; padding: 12px 16px; border-radius: 4px; cursor: pointer; }
+        /* show only the pair relevant to the checked slide */
+        #slide1:checked ~ .nav-buttons .prev1,
+        #slide1:checked ~ .nav-buttons .next1,
+        #slide2:checked ~ .nav-buttons .prev2,
+        #slide2:checked ~ .nav-buttons .next2,
+        #slide3:checked ~ .nav-buttons .prev3,
+        #slide3:checked ~ .nav-buttons .next3,
+        #slide4:checked ~ .nav-buttons .prev4,
+        #slide4:checked ~ .nav-buttons .next4 { display: inline-block; }
+        .nav-buttons label:hover { background: rgba(0,0,0,0.8); }
+        
   </style>
 </head>
 <body>
@@ -162,9 +242,50 @@
   </div>
 
   <!-- HERO -->
-  <div class="hero"></div>
+   <div class="main">
+  <div class="hero">
+    <section class="slider">
+            <input type="radio" name="slide" id="slide1" checked>
+            <input type="radio" name="slide" id="slide2">
+            <input type="radio" name="slide" id="slide3">
+            <input type="radio" name="slide" id="slide4">
+
+            <div class="slider-container">
+                <div class="slide">Slide 1</div>
+                <div class="slide">Slide 2</div>
+                <div class="slide">Slide 3</div>
+                <div class="slide">Slide 4</div>
+            </div>
+
+            <div class="nav-buttons">
+                <!-- slide 1 buttons -->
+                <label class="prev prev1" for="slide4">❮</label>
+                <label class="next next1" for="slide2">❯</label>
+
+                <!-- slide 2 buttons -->
+                <label class="prev prev2" for="slide1">❮</label>
+                <label class="next next2" for="slide3">❯</label>
+
+                <!-- slide 3 buttons -->
+                <label class="prev prev3" for="slide2">❮</label>
+                <label class="next next3" for="slide4">❯</label>
+
+                <!-- slide 4 buttons -->
+                <label class="prev prev4" for="slide3">❮</label>
+                <label class="next next4" for="slide1">❯</label>
+            </div>
+
+            <div class="controls">
+                <label for="slide1"></label>
+                <label for="slide2"></label>
+                <label for="slide3"></label>
+                <label for="slide4"></label>
+            </div>
+        </section>
+  </div>
 
   <!-- PRODUCTS -->
+   <div class="pro">
   <section class="products">
     <div class="card">
       <h3>Electronics</h3>
@@ -187,6 +308,8 @@
       <a href="#">Buy now</a>
     </div>
   </section>
+  </div>
+  </div>
 
   <!-- FOOTER -->
   <footer>
