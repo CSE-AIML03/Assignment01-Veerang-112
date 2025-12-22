@@ -31,6 +31,11 @@
       font-weight:bold;
       color:#f3a847;
     }
+
+    .ma{
+      overflow: auto;
+    }
+
     .search-box{
       flex:1;
       margin:0 20px;
@@ -39,11 +44,11 @@
     .search-box input{
       width:90%;
       padding:10px;
-      border-radius: 20px 0 0 20px;
+      border-radius: 10px 0 0 10px;
     }
     .search-box button{
       padding:10px 15px;
-      border-radius: 0 20px 20px 0;
+      border-radius: 0 10px 10px 0;
       background:#febd69;
       cursor:pointer;
     }
@@ -110,7 +115,7 @@
       background:#131921;
       color:#fff;
       padding:30px 20px;
-      margin-top:20px;
+      box-shadow: 0 -6px 30px -6px black;
     }
     .footer-grid{
       display:grid;
@@ -216,11 +221,17 @@
         #slide4:checked ~ .nav-buttons .prev4,
         #slide4:checked ~ .nav-buttons .next4 { display: inline-block; }
         .nav-buttons label:hover { background: rgba(0,0,0,0.8); }
+
+        img{
+          margin:10px;
+          border: 10px solid transparent;
+          border-image: 90 round;
+        }
         
   </style>
 </head>
 <body>
-
+<div class="ma">
   <!-- HEADER -->
   <header>
     <div class="nav">
@@ -313,7 +324,28 @@
       <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPLcgCJ01mhqKQe17Cj0tyUKGTbLBbdCz3WQ&s" />
       <a href="#">Buy now</a>
     </div>
+    <div class="card">
+      <h3>Electronics</h3>
+      <img src="https://thumbs.dreamstime.com/b/gadgets-accessories-gadgets-accessories-isolated-white-background-133429004.jpg" />
+      <a href="#">Shop now</a>
+    </div>
+    <div class="card">
+      <h3>Fashion</h3>
+      <img src="https://static.fibre2fashion.com//articleresources/images/71/7074/SAdobeStock_247321133_Small.jpg" />
+      <a href="#">Explore deals</a>
+    </div>
+    <div class="card">
+      <h3>Home & Kitchen</h3>
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0yU25Zv2MYSQ26KunF3D7uU1JNraZ8XsqRQ&s" />
+      <a href="#">See more</a>
+    </div>
+    <div class="card">
+      <h3>Gaming</h3>
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPLcgCJ01mhqKQe17Cj0tyUKGTbLBbdCz3WQ&s" />
+      <a href="#">Buy now</a>
+    </div>
   </section>
+  </div>
   </div>
   </div>
 
@@ -334,7 +366,7 @@
       </div>
       <div>
         <h4>Make Money with Us</h4>
-        <p>Sell on ShopZone</p>
+        <p>Sell on amazon</p>
         <p>Affiliate Program</p>
       </div>
       <div>
@@ -344,7 +376,7 @@
         <p>Customer Care</p>
       </div>
     </div>
-    <div class="copyright">© 2025 ShopZone Clone</div>
+    <div class="copyright">© 2025 amazon Clone</div>
   </footer>
 
 </body>
