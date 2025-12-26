@@ -63,17 +63,7 @@
       align-items:center;
     }
 
-    /* SUB NAV */
-    .sub-nav{
-      background:#232f3e;
-      color:#fff;
-      padding:8px 20px;
-      font-size:14px;
-    }
-    .sub-nav span{
-      margin-right:15px;
-      cursor:pointer;
-    }
+    
 
     /* HERO */
     .hero{
@@ -227,6 +217,32 @@
           border: 10px solid transparent;
           border-image: 90 round;
         }
+/* SUB NAV */
+    .sub-nav{
+      overflow-x: auto; 
+      overflow-y: hidden; 
+      scroll-behavior: smooth;        /* x-axis scroll */
+  white-space: nowrap;
+      background:#232f3e;
+      color:#fff;
+      padding:8px 20px;
+      font-size:14px;
+      height: 40px;
+    }
+    .sub-nav::-webkit-scrollbar {
+  height: 6px;
+}
+    .sub-nav span{ 
+      display: inline-block;
+      margin-right:15px;
+      padding:5px;
+      cursor:pointer;
+    }
+        
+        .sub-nav span:hover{
+          text-decoration: underline;
+          border: solid 1px white;
+        }
         
   </style>
 </head>
@@ -249,13 +265,22 @@
   </header>
 
   <!-- SUB NAV -->
+   
   <div class="sub-nav">
-    <span>All</span>
-    <span>Mobiles</span>
-    <span>Electronics</span>
+    <span>&#x2630 All</span>
+    <span>Today's Deals</span>
+    <span>Customer Service</span>
+    <span>Gift Cards</span>
+    <span>Registry</span> 
+    <span>Sell</span>
+    <span>Help</span>
+    <span>New Releases</span>
+    <span>Books</span>
     <span>Fashion</span>
-    <span>Home</span>
-    <span>Deals</span>
+    <span>Electronics</span>
+    <span>Computers</span>
+    <span>Home & Kitchen</span>
+    <span>Beauty & Personal Care</span>
   </div>
 
   <!-- HERO -->
