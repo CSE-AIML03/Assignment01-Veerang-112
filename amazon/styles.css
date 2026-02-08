@@ -1,0 +1,442 @@
+:root {
+    --primary-color: #131921;
+    --secondary-color: #232f3e;
+    --accent-color: #febd69;
+    --text-white: #ffffff;
+    --text-light: #cccccc;
+    --bg-color: #e3e6e6;
+    --link-color: #007185;
+    --hover-orange: #f3a847;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Amazon Ember", Arial, sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    min-width: 1000px;
+    /* Amazon isn't very responsive on small screens, mimics desktop width */
+}
+
+/* Header */
+header {
+    background-color: var(--primary-color);
+    color: var(--text-white);
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    height: 60px;
+    gap: 20px;
+}
+
+.logo-container {
+    padding: 5px 8px;
+    border: 1px solid transparent;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+.logo-container:hover {
+    border-color: white;
+}
+
+.logo {
+    width: 97px;
+    height: 30px;
+    background: url('https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg') no-repeat center;
+    background-size: contain;
+    filter: invert(1);
+    margin-top: 5px;
+}
+
+.location-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 12px;
+    color: var(--text-light);
+    cursor: pointer;
+    padding: 5px 8px;
+    border: 1px solid transparent;
+    border-radius: 2px;
+    margin-left: -10px;
+}
+
+.location-container:hover {
+    border-color: white;
+}
+
+.location-container span {
+    margin-left: 15px;
+}
+
+.location-container strong {
+    font-size: 14px;
+    color: var(--text-white);
+    display: flex;
+    align-items: center;
+    gap: 2px;
+}
+
+.location-container i {
+    font-size: 14px;
+    margin-right: 2px;
+}
+
+/* Search Bar */
+.search-bar {
+    flex-grow: 1;
+    display: flex;
+    background: white;
+    border-radius: 4px;
+    overflow: hidden;
+    height: 40px;
+    margin: 0 10px;
+    max-width: 800px;
+}
+
+.search-bar:focus-within {
+    box-shadow: 0 0 0 3px #f90;
+    /* Orange glow */
+}
+
+.search-select {
+    background-color: #f3f3f3;
+    border: none;
+    border-right: 1px solid #cdcdcd;
+    padding: 0 10px;
+    font-size: 12px;
+    cursor: pointer;
+    color: #555;
+    height: 100%;
+    outline: none;
+}
+
+.search-select:hover {
+    background-color: #dadada;
+    color: #111;
+}
+
+.search-input {
+    flex-grow: 1;
+    border: none;
+    padding: 0 10px;
+    outline: none;
+    font-size: 15px;
+    color: #111;
+}
+
+.search-btn {
+    background-color: var(--accent-color);
+    border: none;
+    width: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.search-btn:hover {
+    background-color: var(--hover-orange);
+}
+
+/* Nav Right */
+.nav-right {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.nav-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 12px;
+    color: var(--text-white);
+    cursor: pointer;
+    text-decoration: none;
+    padding: 8px 9px;
+    border: 1px solid transparent;
+    border-radius: 2px;
+}
+
+.nav-item:hover {
+    border-color: white;
+}
+
+.nav-item strong {
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.cart-container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    gap: 5px;
+}
+
+.cart-container span {
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 2px;
+}
+
+/* Sub-Header */
+.sub-header {
+    background-color: var(--secondary-color);
+    color: var(--text-white);
+    padding: 0 20px;
+    height: 39px;
+    font-size: 14px;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    overflow: hidden;
+}
+
+.menu-item {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 5px 8px;
+    border: 1px solid transparent;
+    border-radius: 2px;
+    white-space: nowrap;
+}
+
+.menu-item:hover {
+    border-color: white;
+}
+
+/* Hero Section / Slider */
+.hero-section {
+    position: relative;
+    width: 100%;
+    max-width: 1500px;
+    margin: 0 auto;
+}
+
+.hero-slider {
+    position: relative;
+    width: 100%;
+    /* Aspect ratio or min-height to prevent jumping if images load slowly */
+    min-height: 250px;
+}
+
+.hero-slide {
+    width: 100%;
+    /* Gradient mask to fade into the background */
+    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 60%, rgba(0, 0, 0, 0));
+    -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 60%, rgba(0, 0, 0, 0));
+    display: none;
+    object-fit: cover;
+    object-position: top;
+    animation: fadeEffect 0.5s;
+}
+
+.hero-slide.active {
+    display: block;
+}
+
+@keyframes fadeEffect {
+    from {
+        opacity: 0.8;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.hero-btn {
+    position: absolute;
+    top: 0;
+    height: 60%;
+    /* Only cover top part to avoid overlapping grid too much */
+    width: 80px;
+    background-color: transparent;
+    border: 1px solid transparent;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 5;
+    outline: none;
+}
+
+.hero-btn:hover {
+    border: 1px solid white;
+}
+
+.hero-btn:focus {
+    box-shadow: 0 0 0 2px #fff, 0 0 0 4px #007185;
+}
+
+.prev-btn {
+    left: 0;
+}
+
+.next-btn {
+    right: 0;
+}
+
+.hero-btn svg {
+    stroke: #111;
+    /* Dark stroke for visibility */
+    fill: none;
+}
+
+
+/* Product Grid */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    /* Force 4 columns on desktop */
+    gap: 20px;
+    padding: 20px;
+    max-width: 1480px;
+    margin: -250px auto 0;
+    /* Pull up */
+    z-index: 10;
+    position: relative;
+}
+
+@media (max-width: 1200px) {
+    .product-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 1000px) {
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 420px;
+    z-index: 20;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+.card h2 {
+    font-size: 21px;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.card-content {
+    flex-grow: 1;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.card-content img {
+    transition: transform 0.2s;
+}
+
+/* Simple zoom effect for demo */
+.card-content:hover img {
+    transform: scale(1.02);
+}
+
+.card-link {
+    color: var(--link-color);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.card-link:hover {
+    text-decoration: underline;
+    color: #c7511f;
+}
+
+/* Footer */
+footer {
+    margin-top: 30px;
+}
+
+.back-to-top {
+    background-color: #37475a;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    font-size: 13px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.back-to-top:hover {
+    background-color: #485769;
+}
+
+.footer-nav {
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 50px 10%;
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+    border-bottom: 1px solid #3a4553;
+}
+
+.footer-col {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+}
+
+.footer-col h3 {
+    font-size: 16px;
+    margin-bottom: 14px;
+    color: white;
+    font-weight: 700;
+}
+
+.footer-col a {
+    color: #dddddd;
+    text-decoration: none;
+    font-size: 14px;
+    margin: 5px 0;
+}
+
+.footer-col a:hover {
+    text-decoration: underline;
+}
+
+.footer-bottom {
+    background-color: var(--primary-color);
+    padding: 30px;
+    text-align: center;
+    color: #ddd;
+    font-size: 12px;
+}
+
+.footer-logo {
+    width: 80px;
+    height: 24px;
+    background: url('https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg') no-repeat center;
+    background-size: contain;
+    filter: invert(1);
+    display: inline-block;
+    vertical-align: middle;
+    margin-bottom: 10px;
+}
