@@ -97,11 +97,63 @@
         <div class="menu-item">Prime</div>
     </div>
 
-    <!-- Hero Section -->
+    <!-- Hero Section with Pure CSS Slider -->
     <div class="hero-section">
-        <!-- Using a placeholder image from Unsplash to simulate the Amazon banner -->
-        <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80"
-            alt="Hero Banner" class="hero-img">
+        <!-- Radio inputs for slide selection (hidden) -->
+        <input type="radio" name="slide" id="slide1" class="slider-input" checked>
+        <input type="radio" name="slide" id="slide2" class="slider-input">
+        <input type="radio" name="slide" id="slide3" class="slider-input">
+        <input type="radio" name="slide" id="slide4" class="slider-input">
+        <input type="radio" name="slide" id="slide5" class="slider-input">
+
+        <!-- Slides container -->
+        <div class="slides-container">
+            <div class="slide">
+                <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Slide 1" class="hero-img">
+            </div>
+            <div class="slide">
+                <img src="https://images.unsplash.com/photo-1555939594-58d7cb561021?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Slide 2" class="hero-img">
+            </div>
+            <div class="slide">
+                <img src="https://images.unsplash.com/photo-1517999571537-a7da6941bbb7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Slide 3" class="hero-img">
+            </div>
+            <div class="slide">
+                <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Slide 4" class="hero-img">
+            </div>
+            <div class="slide">
+                <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Slide 5" class="hero-img">
+            </div>
+        </div>
+
+        <!-- Navigation buttons (dots) -->
+        <div class="slider-controls">
+            <label for="slide1" class="slider-dot active"></label>
+            <label for="slide2" class="slider-dot"></label>
+            <label for="slide3" class="slider-dot"></label>
+            <label for="slide4" class="slider-dot"></label>
+            <label for="slide5" class="slider-dot"></label>
+        </div>
+
+        <!-- Arrows for each slide -->
+        <!-- Slide 1 -->
+        <label for="slide5" class="slider-arrow left-arrow arrow-1">❮</label>
+        <label for="slide2" class="slider-arrow right-arrow arrow-1">❯</label>
+
+        <!-- Slide 2 -->
+        <label for="slide1" class="slider-arrow left-arrow arrow-2">❮</label>
+        <label for="slide3" class="slider-arrow right-arrow arrow-2">❯</label>
+
+        <!-- Slide 3 -->
+        <label for="slide2" class="slider-arrow left-arrow arrow-3">❮</label>
+        <label for="slide4" class="slider-arrow right-arrow arrow-3">❯</label>
+
+        <!-- Slide 4 -->
+        <label for="slide3" class="slider-arrow left-arrow arrow-4">❮</label>
+        <label for="slide5" class="slider-arrow right-arrow arrow-4">❯</label>
+
+        <!-- Slide 5 -->
+        <label for="slide4" class="slider-arrow left-arrow arrow-5">❮</label>
+        <label for="slide1" class="slider-arrow right-arrow arrow-5">❯</label>
     </div>
 
     <!-- Content Grid -->

@@ -215,23 +215,197 @@ header {
     border-color: white;
 }
 
-/* Hero Section */
+/* Hero Section - CSS Slider */
 .hero-section {
     position: relative;
     width: 100%;
     max-width: 1500px;
     margin: 0 auto;
+    overflow: hidden;
+}
+
+/* Hide radio inputs */
+.slider-input {
+    display: none;
+}
+
+/* Slides Container */
+.slides-container {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    background-color: #f0f0f0;
+}
+
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+    transform: translateX(100%);
+    transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .hero-img {
     width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
     /* Gradient mask to fade into the background */
     mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0));
     -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0));
     display: block;
-    min-height: 250px;
-    object-fit: cover;
-    object-position: top;
+}
+
+/* Slide positioning based on active slide */
+#slide1:checked~.slides-container .slide:nth-child(1) {
+    transform: translateX(0);
+    z-index: 10;
+}
+
+#slide1:checked~.slides-container .slide:nth-child(2),
+#slide1:checked~.slides-container .slide:nth-child(3),
+#slide1:checked~.slides-container .slide:nth-child(4),
+#slide1:checked~.slides-container .slide:nth-child(5) {
+    transform: translateX(100%);
+}
+
+#slide2:checked~.slides-container .slide:nth-child(1) {
+    transform: translateX(-100%);
+}
+
+#slide2:checked~.slides-container .slide:nth-child(2) {
+    transform: translateX(0);
+    z-index: 10;
+}
+
+#slide2:checked~.slides-container .slide:nth-child(3),
+#slide2:checked~.slides-container .slide:nth-child(4),
+#slide2:checked~.slides-container .slide:nth-child(5) {
+    transform: translateX(100%);
+}
+
+#slide3:checked~.slides-container .slide:nth-child(1),
+#slide3:checked~.slides-container .slide:nth-child(2) {
+    transform: translateX(-100%);
+}
+
+#slide3:checked~.slides-container .slide:nth-child(3) {
+    transform: translateX(0);
+    z-index: 10;
+}
+
+#slide3:checked~.slides-container .slide:nth-child(4),
+#slide3:checked~.slides-container .slide:nth-child(5) {
+    transform: translateX(100%);
+}
+
+#slide4:checked~.slides-container .slide:nth-child(1),
+#slide4:checked~.slides-container .slide:nth-child(2),
+#slide4:checked~.slides-container .slide:nth-child(3) {
+    transform: translateX(-100%);
+}
+
+#slide4:checked~.slides-container .slide:nth-child(4) {
+    transform: translateX(0);
+    z-index: 10;
+}
+
+#slide4:checked~.slides-container .slide:nth-child(5) {
+    transform: translateX(100%);
+}
+
+#slide5:checked~.slides-container .slide:nth-child(1),
+#slide5:checked~.slides-container .slide:nth-child(2),
+#slide5:checked~.slides-container .slide:nth-child(3),
+#slide5:checked~.slides-container .slide:nth-child(4) {
+    transform: translateX(-100%);
+}
+
+#slide5:checked~.slides-container .slide:nth-child(5) {
+    transform: translateX(0);
+    z-index: 10;
+}
+
+/* Navigation Dots */
+.slider-controls {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 20;
+}
+
+.slider-dot {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.5);
+    border: 2px solid white;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.slider-dot:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+/* Active dot styling */
+#slide1:checked~.slider-controls .slider-dot:nth-child(1),
+#slide2:checked~.slider-controls .slider-dot:nth-child(2),
+#slide3:checked~.slider-controls .slider-dot:nth-child(3),
+#slide4:checked~.slider-controls .slider-dot:nth-child(4),
+#slide5:checked~.slider-controls .slider-dot:nth-child(5) {
+    background-color: white;
+    transform: scale(1.2);
+}
+
+/* Arrow Navigation Buttons */
+.slider-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 32px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    width: 50px;
+    height: 50px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 15;
+    transition: background-color 0.3s;
+    border-radius: 4px;
+}
+
+.slider-arrow:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.left-arrow {
+    left: 10px;
+}
+
+.right-arrow {
+    right: 10px;
+}
+
+/* Show arrows for current slide */
+#slide1:checked~.arrow-1,
+#slide2:checked~.arrow-2,
+#slide3:checked~.arrow-3,
+#slide4:checked~.arrow-4,
+#slide5:checked~.arrow-5 {
+    display: flex;
 }
 
 /* Product Grid */
@@ -242,8 +416,8 @@ header {
     gap: 20px;
     padding: 20px;
     max-width: 1480px;
-    margin: -250px auto 0;
-    /* Pull up */
+    margin: -100px auto 0;
+    /* Pull up to overlap with hero */
     z-index: 10;
     position: relative;
 }
