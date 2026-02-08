@@ -215,7 +215,7 @@ header {
     border-color: white;
 }
 
-/* Hero Section / Slider */
+/* Hero Section */
 .hero-section {
     position: relative;
     width: 100%;
@@ -223,76 +223,16 @@ header {
     margin: 0 auto;
 }
 
-.hero-slider {
-    position: relative;
-    width: 100%;
-    /* Aspect ratio or min-height to prevent jumping if images load slowly */
-    min-height: 250px;
-}
-
-.hero-slide {
+.hero-img {
     width: 100%;
     /* Gradient mask to fade into the background */
-    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 60%, rgba(0, 0, 0, 0));
-    -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 60%, rgba(0, 0, 0, 0));
-    display: none;
+    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0));
+    -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0));
+    display: block;
+    min-height: 250px;
     object-fit: cover;
     object-position: top;
-    animation: fadeEffect 0.5s;
 }
-
-.hero-slide.active {
-    display: block;
-}
-
-@keyframes fadeEffect {
-    from {
-        opacity: 0.8;
-    }
-
-    to {
-        opacity: 1;
-    }
-}
-
-.hero-btn {
-    position: absolute;
-    top: 0;
-    height: 60%;
-    /* Only cover top part to avoid overlapping grid too much */
-    width: 80px;
-    background-color: transparent;
-    border: 1px solid transparent;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 5;
-    outline: none;
-}
-
-.hero-btn:hover {
-    border: 1px solid white;
-}
-
-.hero-btn:focus {
-    box-shadow: 0 0 0 2px #fff, 0 0 0 4px #007185;
-}
-
-.prev-btn {
-    left: 0;
-}
-
-.next-btn {
-    right: 0;
-}
-
-.hero-btn svg {
-    stroke: #111;
-    /* Dark stroke for visibility */
-    fill: none;
-}
-
 
 /* Product Grid */
 .product-grid {

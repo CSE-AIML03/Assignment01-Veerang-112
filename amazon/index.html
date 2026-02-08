@@ -99,28 +99,9 @@
 
     <!-- Hero Section -->
     <div class="hero-section">
-        <div class="hero-slider">
-            <!-- Slide 1 -->
-            <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80"
-                alt="Hero Banner 1" class="hero-slide active">
-            <!-- Slide 2 -->
-            <img src="https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80"
-                alt="Hero Banner 2" class="hero-slide">
-            <!-- Slide 3 -->
-            <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80"
-                alt="Hero Banner 3" class="hero-slide">
-        </div>
-
-        <button class="hero-btn prev-btn" aria-label="Previous Slide">
-            <svg width="30" height="40" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z" stroke="#000" stroke-width="2" fill="none" />
-            </svg>
-        </button>
-        <button class="hero-btn next-btn" aria-label="Next Slide">
-            <svg width="30" height="40" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" stroke="#000" stroke-width="2" fill="none" />
-            </svg>
-        </button>
+        <!-- Using a placeholder image from Unsplash to simulate the Amazon banner -->
+        <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80"
+            alt="Hero Banner" class="hero-img">
     </div>
 
     <!-- Content Grid -->
@@ -247,45 +228,6 @@
         </div>
     </footer>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const slides = document.querySelectorAll('.hero-slide');
-            const prevBtn = document.querySelector('.prev-btn');
-            const nextBtn = document.querySelector('.next-btn');
-            let currentSlide = 0;
-
-            function showSlide(index) {
-                // Wrap around
-                if (index >= slides.length) {
-                    currentSlide = 0;
-                } else if (index < 0) {
-                    currentSlide = slides.length - 1;
-                } else {
-                    currentSlide = index;
-                }
-
-                // Remove active class from all
-                slides.forEach(slide => slide.classList.remove('active'));
-
-                // Add active class to current
-                slides[currentSlide].classList.add('active');
-            }
-
-            // Event Listeners
-            prevBtn.addEventListener('click', () => {
-                showSlide(currentSlide - 1);
-            });
-
-            nextBtn.addEventListener('click', () => {
-                showSlide(currentSlide + 1);
-            });
-
-            // Auto slide every 5 seconds
-            setInterval(() => {
-                showSlide(currentSlide + 1);
-            }, 5000);
-        });
-    </script>
 </body>
 
 </html>
